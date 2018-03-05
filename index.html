@@ -1,113 +1,920 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Shower Presentation Engine</title>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+  <title>Shower Presentation Engine</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body class="shower list">
 
-	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
-	</header>
+<header class="caption">
+  <h1>История? Скуууучно.</h1>
+  <p>Паша Мягков, TechOps</p>
+</header>
 
-	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<figure>
-			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
-		<style>
-			#cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
-				font-size:70px;
-				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
-		</style>
-	</section>
+<section class="slide" id="cover">
+  <h2>История? Скуууучно.</h2>
+  <p>С ❤️ от Паши Мягкова</p>
+  <figure>
+    <img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
+    <figcaption class="white">
+      <a href="http://fiftyfootshadows.net/">© John Carey</a>
+    </figcaption>
+  </figure>
+  <style>
+    #cover h2 {
+      margin: 30px 0 0;
+      color: #FFF;
+      text-align: center;
+      font-size: 70px;
+    }
 
-	<section class="slide">
-		<h2>Shower key features</h2>
-		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</section>
+    #cover p {
+      margin: 10px 0 0;
+      text-align: center;
+      color: #FFF;
+      font-style: italic;
+      font-size: 20px;
+    }
 
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
+    #cover p a {
+      color: #FFF;
+    }
 
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
+    .tech-date {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 3%;
+      font-size: 40px;
+      color: #bdbdbd;
+    }
 
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
-	</section>
+    .headerLine {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      color: #585a5e;
+    }
 
-	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
-	</section>
+    .headerLine:first-child {
+      margin-top: 0;
+    }
 
-	<section class="slide">
-		<h2>Code samples</h2>
-		<pre>
+    .firstLine {
+      font-size: 150px;
+    }
+
+    .secondLine {
+      font-size: 50px;
+      color: #a7a7a7;
+    }
+
+    .thirdLine {
+      font-size: 40px;
+      color: #bfbfbf;
+    }
+
+    .wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      font-size: 50px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .problems {
+      display: inline-block;
+      text-align: left;
+      color: #655353;
+    }
+
+    .problems.problems li,
+    .description.description li {
+      text-indent: 0;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .problems.problems li:before,
+    .problems.problems li:after,
+    .description.description li:before,
+    .description.description li:after {
+      content: none;
+      list-style-type: none;
+    }
+
+    .slide.withProblems {
+      padding: 106px 0 0;
+      background: #fbe3e6;
+    }
+
+    .slide.withDescription {
+      padding: 106px 0 0;
+    }
+
+    .slide.noProblems {
+      padding: 106px 0 0;
+      background: #e4fbef;
+    }
+
+    .slide.noProblems .problems {
+      opacity: .8;
+    }
+
+    .solution {
+      font-size: 70px;
+      font-weight: 700;
+      color: #585a5e;
+    }
+
+    ul.description {
+      display: inline-block;
+      text-align: left;
+      color: #655353;
+      font-size: 40px;
+    }
+
+    .dimmed {
+      opacity: .7;
+    }
+
+    .full {
+      width: 100%;
+      background-size: contain;
+      position: absolute;
+      /* left: 0; */
+      /* right: 0; */
+      /* top: 0; */
+      /* bottom: 0; */
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 50;
+    }
+
+    .imgCaption {
+      color: #f00;
+      opacity: 0.5;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      font-size: 70px;
+      z-index: 51;
+    }
+
+    .slide pre {
+      display: inline-block;
+    }
+
+    .slide pre code {
+      margin-left: -30px;
+      padding: 30px;
+      width: auto;
+      background-color: rgba(212, 212, 212, .15);
+    }
+
+    .code {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .code pre {
+      font-size: 28px;
+      text-align: left;
+    }
+
+    .codeResult {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .codeResult * {
+      font-size: 50px;
+    }
+
+    .fancyButton {
+      background: palegoldenrod;
+      color: purple;
+      border: 0;
+      padding: 10px 20px;
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    .imgCaption.green {
+      color: #179217;
+    }
+  </style>
+</section>
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">Дисклеймер</div>
+    <ul class="description">
+      <li>Только web, только хардкор.</li>
+      <li>Приправа из POV.</li>
+      <li>С датами — сложно!</li>
+      <li>Если неинтересно, вы знаете, что делать.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide withProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Нельзя идентифицировать получателя.</li>
+      <li>Нет возможности передать информацию.</li>
+      <li>Как вложить в сообщение смысл?</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide noProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Нельзя идентифицировать получателя.</li>
+      <li>Нет возможности передать информацию.</li>
+      <li>Как вложить в сообщение смысл?</li>
+    </ul>
+    <div class="solution">World Wide Web</div>
+  </div>
+</section>
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">World Wide Web</div>
+    <div class="headerLine secondLine">
+      <div>URI</div>
+      <div>HTTP</div>
+      <div>HTML</div>
+    </div>
+    <!--<ul class="description">
+      <li>Нельзя идентифицировать получателя.</li>
+      <li>Нет возможности передать информацию.</li>
+      <li>Как вложить в сообщение смысл?</li>
+    </ul>-->
+
+  </div>
+  <h4 class="tech-date">1989</h4>
+</section>
+
+
+<section class="slide image">
+  <img class="full" src="pictures/schemes/basic http.jpg">
+</section>
+
+<section class="slide image">
+  <img class="full" src="pictures/schemes/basic http.jpg">
+  <div class="imgCaption">СИНХРОННО!</div>
+</section>
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">HTML</div>
+    <div class="code">
+      <pre>
+        <code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;button&gt;Кнопка&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+      </pre>
+      <div class="codeResult">
+        <button>Кнопка</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="shout">
+    <span>DOM Demo</span>
+  </h2>
+</section>
+
+<section class="slide withProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Нет хранилища на клиенте</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide noProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Нет хранилища на клиенте</li>
+    </ul>
+    <div class="solution">Cookies</div>
+  </div>
+  <h4 class="tech-date">1994</h4>
+</section>
+
+<!--
+<section class="slide">
+	<h2 class="shout">
+		&lt;!&ndash; Схема &ndash;&gt;
+		<span>Схема WWW с куками</span>
+	</h2>
+</section>
+-->
+
+<section class="slide withProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Управление видом документа</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide noProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Управление видом документа</li>
+    </ul>
+    <div class="solution">CSS</div>
+  </div>
+  <h4 class="tech-date">1995</h4>
+</section>
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">CSS</div>
+    <div class="code">
+<pre>
+<code class="css">.fancyButton {
+  background: palegoldenrod;
+  color: purple;
+  border: 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+}</code>
+    </pre>
+      <div class="codeResult">
+        <button class="fancyButton">Кнопка</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+<section class="slide">
+	<h2 class="shout">
+		<span>Timeline развития CSS</span>
+	</h2>
+</section>
+-->
+
+<section class="slide withProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Управление содержимым документа</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide noProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Управление содержимым документа</li>
+    </ul>
+    <div class="solution">JavaScript</div>
+    <div class="headerLine thirdLine" style="margin-top: -15px">
+      <div>LiveScript</div>
+      <div>Mocha</div>
+      <div>ECMAScript</div>
+    </div>
+  </div>
+  <h4 class="tech-date">1995</h4>
+</section>
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">JavaScript</div>
+    <div class="code">
+      <pre>
+<code class="html">&lt;button
+  class="fancyButton"
+  onclick="alert('You clicked on me!')"
+&gt;</code>
+      </pre>
+    </div>
+  </div>
+</section>
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="code">
+      <div class="codeResult">
+        <button class="fancyButton" onClick="alert('You clicked on me!')">
+          Кнопка
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+<section class="slide">
+	<h2 class="shout">
+		<span>Timeline развития JavaScript</span>
+	</h2>
+</section>
+-->
+
+<section class="slide image">
+  <img class="full" src="pictures/schemes/full http.jpg">
+</section>
+
+<section class="slide image">
+  <img class="full" src="pictures/schemes/full http.jpg">
+  <div class="imgCaption">СИНХРОННО!</div>
+</section>
+
+<section class="slide">
+  <h2 class="shout">
+    <span>DOM, CSSOM, JS Demo</span>
+  </h2>
+</section>
+
+<!--
+<section class="slide">
+	<h2 class="shout">
+		<span>??? Первая браузерная война</span>
+	</h2>
+</section>
+-->
+
+<section class="slide withProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Синхронный клиент-сервер</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide noProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Синхронный клиент-сервер</li>
+    </ul>
+    <div class="solution">AJAX</div>
+    <!--<div class="headerLine thirdLine" style="margin-top: -15px">
+      <div>LiveScript</div>
+      <div>Mocha</div>
+      <div>ECMAScript</div>
+    </div>-->
+  </div>
+  <h4 class="tech-date">1996</h4>
+</section>
+
+
+<!--
+<section class="slide">
+	<h2 class="shout">
+		&lt;!&ndash; геройский фон &ndash;&gt;
+		<span>Ajax</span>
+		<span>iframe</span>
+		<span>XML HTTP Request</span>
+		<span>XML</span>
+	</h2>
+</section>
+-->
+
+<!--
+<section class="slide">
+	<h2 class="shout">
+		<span>Timeline развития AJAX</span>
+	</h2>
+</section>
+-->
+
+<section class="slide image">
+  <img class="full" src="pictures/schemes/ajax.jpg">
+</section>
+
+<section class="slide image">
+  <img class="full" src="pictures/schemes/ajax.jpg">
+  <div class="imgCaption green">ДОЖДАЛИСЬ!</div>
+</section>
+
+<section class="slide withProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Медленная работа с сырым HTML</li>
+      <li>Нагрузка на сервер</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide noProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Медленная работа с сырым HTML</li>
+      <li>Нагрузка на сервер</li>
+    </ul>
+    <div class="solution">XXX</div>
+    <div class="headerLine thirdLine" style="margin-top: -15px">
+      <div>XML</div>
+      <div>XSLT</div>
+      <div>XPath</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">XML</div>
+    <ul class="description">
+      <li>Универсальный.</li>
+      <li>Понимаемый машинами.</li>
+      <li><span class="dimmed">Локаничный.</span> Нет.</li>
+    </ul>
+  </div>
+  <h4 class="tech-date">1996</h4>
+</section>
+
+<section class="slide">
+  <h2>XML</h2>
+  <pre>
+		<code>&lt;?xml version=&quot;1.0&quot;?&gt;</code>
+		<code>&lt;catalog&gt;</code>
+		  <code>  &lt;book id=&quot;book1&quot;&gt;</code>
+		    <code>    &lt;author&gt;Matthew Gambardella&lt;/author&gt;</code>
+		    <code>    &lt;title&gt;XML Developer's Guide&lt;/title&gt;</code>
+		  <code>  &lt;/book&gt;</code>
+		<code>&lt;/catalog&gt;</code>
+	</pre>
+</section>
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">XSLT</div>
+    <ul class="description">
+      <li>Преобразоние XML в XML.</li>
+      <li>XML — надмножество HTML.</li>
+    </ul>
+  </div>
+  <h4 class="tech-date">1998</h4>
+</section>
+
+<!--
+<section class="slide">
+	<h2>XSLT</h2>
+	&lt;!&ndash; Пример кода XSLT &ndash;&gt;
+</section>
+
+<section class="slide">
+	<h2>XSLT</h2>
+	&lt;!&ndash; Пример кода XSLT рядом &ndash;&gt;
+</section>
+-->
+
+<!--<section class="slide">
+	<h2>XML &times; XSLT = ❤️</h2>
+	&lt;!&ndash; Что получилось &ndash;&gt;
+</section>-->
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">XPath️</div>
+    <ul class="description">
+      <li>Поиск узлов XML.</li>
+      <li>XML — надмножество HTML.</li>
+    </ul>
+  </div>
+  <h4 class="tech-date">1998</h4>
+</section>
+
+
+<!--<section class="slide">
+	<h2>XPath️</h2>
+	<ul>
+		<li>Поиск узлов XML.</li>
+		<li>XML — надмножество HTML.</li>
+	</ul>
+	&lt;!&ndash; Пример кода на XPath &ndash;&gt;
+</section>-->
+
+<section class="slide image">
+  <img class="full" src="pictures/schemes/basic http.jpg">
+</section>
+
+<section class="slide image">
+  <img class="full" src="pictures/schemes/xxx.jpg">
+</section>
+
+<!--
+<section class="slide">
+	<h2 class="shout">
+		&lt;!&ndash; timeline взаимодействия &ndash;&gt;
+		<span>XXx во времени</span>
+	</h2>
+</section>
+-->
+
+<section class="slide withProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>А что сзади?</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide noProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>А что сзади?</li>
+    </ul>
+    <div class="solution">NGINX</div>
+  </div>
+  <h4 class="tech-date">2004</h4>
+</section>
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">NGINX</div>
+    <ul class="description">
+      <li>Российская поделка.</li>
+      <li>Обеспечивает маршрутизацию.</li>
+      <li>Удобно управляет заголовками, ответами.</li>
+    </ul>
+  </div>
+  <h4 class="tech-date">2004</h4>
+</section>
+
+<section class="slide image">
+  <img class="full" src="pictures/schemes/nginx.jpg">
+</section>
+
+
+<!--<section class="slide">
+	&lt;!&ndash; Подсвечивать фон &ndash;&gt;
+	<h2>Back to 2005</h2>
+	&lt;!&ndash; код подписки на события &ndash;&gt;
+	&lt;!&ndash;<pre lang='javascript'>
+		<code>function biteMe (ass) {</code>
+		<code>  ass.bitten = true</code>
+		<code>  return ass</code>
+		<code>}</code>
+	</pre>&ndash;&gt;
+</section>-->
+
+<section class="slide withProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li><span class='dimmed'>Нет общепринятых стандартов.</span> Есть.</li>
+      <li>Разный набор фич в браузерах.</li>
+      <li>Никому пока не нужно договариваться.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide noProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li><span class='dimmed'>Нет общепринятых стандартов.</span> Есть.</li>
+      <li>Разный набор фич в браузерах.</li>
+      <li>Никому пока не нужно договариваться.</li>
+    </ul>
+    <div class="solution">jQuery</div>
+  </div>
+  <h4 class="tech-date">2006</h4>
+</section>
+
+<!--
+<section class="slide">
+	<h2 class="shout">
+		&lt;!&ndash; код до и после &ndash;&gt;
+	</h2>
+</section>
+-->
+
+<!--
+<section class="slide">
+	<h2 class="shout">
+		&lt;!&ndash; привело к jQuery-программистам &ndash;&gt;
+	</h2>
+</section>
+-->
+
+<section class="slide withProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>А про мобильные забыли?</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide withProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>А про мобильные забыли?</li>
+    </ul>
+    <div class="solution">Да</div>
+  </div>
+  <h4 class="tech-date">1997</h4>
+</section>
+
+<section class="slide noProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>А про мобильные забыли?</li>
+    </ul>
+    <div class="solution">CSS Media Queries</div>
+  </div>
+  <h4 class="tech-date">2001</h4>
+</section>
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">CSS Media Queries</div>
+    <ul class="description">
+      <li>Учёт размера устройства.</li>
+      <li>Определение ориентации.</li>
+      <li>Отслеживание типа устройства.</li>
+    </ul>
+  </div>
+  <h4 class="tech-date">2001</h4>
+</section>
+
+
+<!--
+<section class="slide">
+	<h2 class="shout">
+		Media Queries
+	</h2>
+	&lt;!&ndash; Код media queries &ndash;&gt;
+</section>
+
+<section class="slide">
+	<h2 class="shout">
+		Timeline Media Queries
+	</h2>
+</section>
+-->
+
+<section class="slide">
+  <h2 class="shout">
+    Media Queries Demo
+  </h2>
+</section>
+
+<section class="slide withProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Хочу рисовать!</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide noProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Хочу рисовать!</li>
+    </ul>
+    <div class="solution">Canvas</div>
+  </div>
+  <h4 class="tech-date">2005</h4>
+</section>
+
+<!--
+<section class="slide">
+	<h2 class="shout">
+		Timeline Canvas
+	</h2>
+</section>
+-->
+
+<section class="slide withProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Быстрая персистентная передача данных.</li>
+      <li>Инициатива сзади.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide noProblems">
+  <div class="wrapper">
+    <ul class="problems">
+      <li>Быстрая персистентная передача данных.</li>
+      <li>Инициатива сзади.</li>
+    </ul>
+    <div class="solution">Web Sockets</div>
+  </div>
+  <h4 class="tech-date">2011</h4>
+</section>
+
+<section class="slide noProblems">
+  <div class="wrapper">
+    <div class="solution">Web Sockets</div>
+    <ul class="description">
+      <li>Держит соединение.</li>
+      <li>Основан на TCP.</li>
+      <li>Сервер может инициировать пакет.</li>
+    </ul>
+  </div>
+  <h4 class="tech-date">2011</h4>
+</section>
+
+<section class="slide image">
+  <img class="full" src="pictures/schemes/ws.jpg">
+</section>
+
+<section class="slide">
+  <h2>
+    Demo WS
+  </h2>
+</section>
+<!--
+
+<section class="slide">
+	<h2>
+		Web Sockets Timeline
+	</h2>
+</section>-->
+
+<!--
+
+<section class="slide">
+	<h2>Plain text on your slides</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut
+		labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris
+		<strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in
+		voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+</section>
+
+<section class="slide">
+	<h2>Two columns if you like</h2>
+	<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+		aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+		fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+</section>
+
+<section class="slide">
+	<h2>All kind of lists</h2>
+	<ol>
+		<li>Simple lists are marked with bullets</li>
+		<li>Ordered lists begin with a number</li>
+		<li>You can even nest lists one inside another
+			<ul>
+				<li>Or mix their types</li>
+				<li>But do not go too far</li>
+				<li>Otherwise audience will be bored</li>
+			</ul>
+		</li>
+		<li>Look, seven rows exactly!</li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Serious citations</h2>
+	<figure>
+		<blockquote>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+				ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+				fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+		</blockquote>
+		<figcaption>Marcus Tullius Cicero</figcaption>
+	</figure>
+</section>
+
+<section class="slide">
+	<h2>Code samples</h2>
+	<pre>
 			<code>&lt;!DOCTYPE html&gt;</code>
 			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
+			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!&#45;&#45;Comment&#45;&#45;&gt;</span></code>
 			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
 			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
 			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
 			<code><mark>&lt;/head&gt;</mark></code>
 		</pre>
-	</section>
+</section>
 
-	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
+<section class="slide">
+	<h2>Even tables</h2>
+	<table>
 		<tr>
 			<th scope="col">Locavore</th>
 			<th>Umami</th>
@@ -138,68 +945,69 @@
 			<td>Swag</td>
 			<td>Blog</td>
 		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
-	</section>
+	</table>
+	<p>It’s good to have information organized.</p>
+</section>
 
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<figure>
-			<img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
-		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
-	</section>
+<section class="slide" id="picture">
+	<h2>Pictures</h2>
+	<figure>
+		<img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
+		<figcaption class="white">
+			<a href="http://fiftyfootshadows.net/">© John Carey</a>
+		</figcaption>
+	</figure>
+	<style>
+		#picture h2 {
+			color: #FFF;
+		}
+	</style>
+</section>
 
-	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
-	</section>
+<section class="slide">
+	<h2 class="shout shrink">You can even shout this way</h2>
+</section>
 
-	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
-	</section>
+<section class="slide">
+	<h2>Inner navigation</h2>
+	<ol>
+		<li>Lets you reveal list items one by one</li>
+		<li class="next">To keep some key points</li>
+		<li class="next">In secret from audience</li>
+		<li class="next">But it will work only once</li>
+		<li class="next">Nobody wants to see the same joke twice</li>
+	</ol>
+</section>
 
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
-	</section>
+<section class="slide grid">
+	<h2>All nicely aligned to grid</h2>
+</section>
 
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
-	</section>
+<section class="slide" id="see-more">
+	<h2 class="shout">
+		<img src="pictures/logo.svg" alt="Shower logo">
+		<a href="https://github.com/shower/shower">See more on GitHub</a>
+	</h2>
+	<style>
+		#see-more h2 {
+			font-size: 100px
+		}
 
-	<footer class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</footer>
+		#see-more img {
+			width: 0.72em;
+			height: 0.72em;
+		}
+	</style>
+</section>
+-->
 
-	<div class="progress"></div>
+<footer class="badge">
+  <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+</footer>
 
-	<script src="node_modules/shower-core/shower.min.js"></script>
-	<!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+<div class="progress"></div>
+
+<script src="node_modules/shower-core/shower.min.js"></script>
 
 </body>
 </html>
