@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <head>
   <title>Shower Presentation Engine</title>
   <meta charset="utf-8">
@@ -7,8 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <link rel="stylesheet" href="main.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>hljs.initHighlightingOnLoad()</script>
 </head>
 <body class="shower list">
 
@@ -21,201 +22,11 @@
   <h2>История? Скуууучно.</h2>
   <p>С ❤️ от Паши Мягкова</p>
   <figure>
-    <img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
+    <img class="cover" src="images/cover.jpg" alt="Hands on the orange typewriter in a park">
     <figcaption class="white">
       <a href="http://fiftyfootshadows.net/">© John Carey</a>
     </figcaption>
   </figure>
-  <style>
-    #cover h2 {
-      margin: 30px 0 0;
-      color: #FFF;
-      text-align: center;
-      font-size: 70px;
-    }
-
-    #cover p {
-      margin: 10px 0 0;
-      text-align: center;
-      color: #FFF;
-      font-style: italic;
-      font-size: 20px;
-    }
-
-    #cover p a {
-      color: #FFF;
-    }
-
-    .tech-date {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 3%;
-      font-size: 40px;
-      color: #bdbdbd;
-    }
-
-    .headerLine {
-      margin-top: 50px;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: nowrap;
-      color: #585a5e;
-    }
-
-    .headerLine:first-child {
-      margin-top: 0;
-    }
-
-    .firstLine {
-      font-size: 150px;
-    }
-
-    .secondLine {
-      font-size: 50px;
-      color: #a7a7a7;
-    }
-
-    .thirdLine {
-      font-size: 40px;
-      color: #bfbfbf;
-    }
-
-    .wrapper {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      font-size: 50px;
-      width: 90%;
-      text-align: center;
-    }
-
-    .problems {
-      display: inline-block;
-      text-align: left;
-      color: #655353;
-    }
-
-    .problems.problems li,
-    .description.description li {
-      text-indent: 0;
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
-
-    .problems.problems li:before,
-    .problems.problems li:after,
-    .description.description li:before,
-    .description.description li:after {
-      content: none;
-      list-style-type: none;
-    }
-
-    .slide.withProblems {
-      padding: 106px 0 0;
-      background: #fbe3e6;
-    }
-
-    .slide.withDescription {
-      padding: 106px 0 0;
-    }
-
-    .slide.noProblems {
-      padding: 106px 0 0;
-      background: #e4fbef;
-    }
-
-    .slide.noProblems .problems {
-      opacity: .8;
-    }
-
-    .solution {
-      font-size: 70px;
-      font-weight: 700;
-      color: #585a5e;
-    }
-
-    ul.description {
-      display: inline-block;
-      text-align: left;
-      color: #655353;
-      font-size: 40px;
-    }
-
-    .dimmed {
-      opacity: .7;
-    }
-
-    .full {
-      width: 100%;
-      background-size: contain;
-      position: absolute;
-      /* left: 0; */
-      /* right: 0; */
-      /* top: 0; */
-      /* bottom: 0; */
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 50;
-    }
-
-    .imgCaption {
-      color: #f00;
-      opacity: 0.5;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      position: absolute;
-      font-size: 70px;
-      z-index: 51;
-    }
-
-    .slide pre {
-      display: inline-block;
-    }
-
-    .slide pre code {
-      margin-left: -30px;
-      padding: 30px;
-      width: auto;
-      background-color: rgba(212, 212, 212, .15);
-    }
-
-    .code {
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-    }
-
-    .code pre {
-      font-size: 28px;
-      text-align: left;
-    }
-
-    .codeResult {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .codeResult * {
-      font-size: 50px;
-    }
-
-    .fancyButton {
-      background: palegoldenrod;
-      color: purple;
-      border: 0;
-      padding: 10px 20px;
-      font-size: 50px;
-      font-weight: bold;
-    }
-
-    .imgCaption.green {
-      color: #179217;
-    }
-  </style>
 </section>
 
 <section class="slide withDescription">
@@ -271,12 +82,14 @@
 
 
 <section class="slide image">
-  <img class="full" src="pictures/schemes/basic http.jpg">
+  <img class="full" src="images/schemes/basic http.jpg">
 </section>
 
 <section class="slide image">
-  <img class="full" src="pictures/schemes/basic http.jpg">
-  <div class="imgCaption">СИНХРОННО!</div>
+  <img class="full" src="images/schemes/basic http.jpg">
+  <div class="imgCaptionWrapper">
+    <div class="imgCaption">sync</div>
+  </div>
 </section>
 
 <section class="slide withDescription">
@@ -322,6 +135,22 @@
     <div class="solution">Cookies</div>
   </div>
   <h4 class="tech-date">1994</h4>
+</section>
+
+<section class="slide">
+  <div class="wrapper">
+    <div class="solution">Cookies</div>
+    <div class="code">
+      <pre>
+        <code class="nohighlight">_ga=GA1.2.1981001519.1513852864;
+sid=87b2f35cbc0546022413ec497da2574f;
+language2=en;
+ck_username=puelle;
+mp_session=9be68d19e4ae59727db3b5a3;
+cookie-consent-v1=true;</code>
+      </pre>
+    </div>
+  </div>
 </section>
 
 <!--
@@ -438,12 +267,14 @@
 -->
 
 <section class="slide image">
-  <img class="full" src="pictures/schemes/full http.jpg">
+  <img class="full" src="images/schemes/full http.jpg">
 </section>
 
 <section class="slide image">
-  <img class="full" src="pictures/schemes/full http.jpg">
-  <div class="imgCaption">СИНХРОННО!</div>
+  <img class="full" src="images/schemes/full http.jpg">
+  <div class="imgCaptionWrapper">
+    <div class="imgCaption">sync</div>
+  </div>
 </section>
 
 <section class="slide">
@@ -474,11 +305,6 @@
       <li>Синхронный клиент-сервер</li>
     </ul>
     <div class="solution">AJAX</div>
-    <!--<div class="headerLine thirdLine" style="margin-top: -15px">
-      <div>LiveScript</div>
-      <div>Mocha</div>
-      <div>ECMAScript</div>
-    </div>-->
   </div>
   <h4 class="tech-date">1996</h4>
 </section>
@@ -505,12 +331,14 @@
 -->
 
 <section class="slide image">
-  <img class="full" src="pictures/schemes/ajax.jpg">
+  <img class="full" src="images/schemes/ajax.jpg">
 </section>
 
 <section class="slide image">
-  <img class="full" src="pictures/schemes/ajax.jpg">
-  <div class="imgCaption green">ДОЖДАЛИСЬ!</div>
+  <img class="full" src="images/schemes/ajax.jpg">
+  <div class="imgCaptionWrapper light">
+    <div class="imgCaption green">async</div>
+  </div>
 </section>
 
 <section class="slide withProblems">
@@ -550,17 +378,21 @@
   <h4 class="tech-date">1996</h4>
 </section>
 
-<section class="slide">
-  <h2>XML</h2>
-  <pre>
-		<code>&lt;?xml version=&quot;1.0&quot;?&gt;</code>
-		<code>&lt;catalog&gt;</code>
-		  <code>  &lt;book id=&quot;book1&quot;&gt;</code>
-		    <code>    &lt;author&gt;Matthew Gambardella&lt;/author&gt;</code>
-		    <code>    &lt;title&gt;XML Developer's Guide&lt;/title&gt;</code>
-		  <code>  &lt;/book&gt;</code>
-		<code>&lt;/catalog&gt;</code>
-	</pre>
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">XML</div>
+    <div class="code">
+      <pre>
+<code class="xml">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;catalog&gt;
+  &lt;book id=&quot;book1&quot;&gt;
+    &lt;author age=&quot;48&quot;&gt;Matthew Gambardella&lt;/author&gt;
+    &lt;title&gt;XML Developer's Guide&lt;/title&gt;
+  &lt;/book&gt;
+&lt;/catalog&gt;</code>
+      </pre>
+    </div>
+  </div>
 </section>
 
 <section class="slide withDescription">
@@ -568,56 +400,108 @@
     <div class="solution">XSLT</div>
     <ul class="description">
       <li>Преобразоние XML в XML.</li>
-      <li>XML — надмножество HTML.</li>
+      <li>XHTML — тоже XML.</li>
     </ul>
   </div>
   <h4 class="tech-date">1998</h4>
 </section>
 
-<!--
-<section class="slide">
-	<h2>XSLT</h2>
-	&lt;!&ndash; Пример кода XSLT &ndash;&gt;
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">XSLT</div>
+    <div class="code">
+      <pre>
+<code class="xslt">&lt;xsl:template match=&quot;/&quot;&gt;
+  &lt;xsl:for-each select=&quot;catalog/book&quot;&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;xsl:value-of select=&quot;author&quot;/&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;xsl:value-of select=&quot;title&quot;/&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/xsl:for-each&gt;
+&lt;/xsl:template&gt;</code>
+      </pre>
+    </div>
+  </div>
 </section>
 
-<section class="slide">
-	<h2>XSLT</h2>
-	&lt;!&ndash; Пример кода XSLT рядом &ndash;&gt;
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">XML &times; XSLT = ❤️</div>
+    <div class="code">
+      <div class="tableResult">
+        <table class="xmlxslt">
+          <thead>
+            <tr>
+              <th>Author</th>
+              <th>Book Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Matthew Gambardella</td>
+              <td>XML Developer's Guide</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </section>
--->
 
-<!--<section class="slide">
-	<h2>XML &times; XSLT = ❤️</h2>
-	&lt;!&ndash; Что получилось &ndash;&gt;
-</section>-->
 
 <section class="slide withDescription">
   <div class="wrapper">
     <div class="solution">XPath️</div>
     <ul class="description">
       <li>Поиск узлов XML.</li>
-      <li>XML — надмножество HTML.</li>
     </ul>
   </div>
   <h4 class="tech-date">1998</h4>
 </section>
 
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">XPath</div>
+    <div class="code">
+      <pre style="align-self: center;">
+<code class="nohighlight">//book[author/@age < 50]</code>
+      </pre>
+      <pre>
+<code class="xml">&lt;catalog&gt;
+  &lt;book id=&quot;book1&quot;&gt;
+    &lt;author age=&quot;48&quot; /&gt;
+  &lt;/book&gt;
+  &lt;book id=&quot;book1&quot;&gt;
+    &lt;author age=&quot;55&quot; /&gt;
+  &lt;/book&gt;
+&lt;/catalog&gt;</code>
+      </pre>
+    </div>
+  </div>
+</section>
 
-<!--<section class="slide">
-	<h2>XPath️</h2>
-	<ul>
-		<li>Поиск узлов XML.</li>
-		<li>XML — надмножество HTML.</li>
-	</ul>
-	&lt;!&ndash; Пример кода на XPath &ndash;&gt;
-</section>-->
-
-<section class="slide image">
-  <img class="full" src="pictures/schemes/basic http.jpg">
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">XPath</div>
+    <div class="code">
+      <pre style="align-self: center;">
+<code class="nohighlight">//book[author/@age < 50]</code>
+      </pre>
+      <pre>
+<code class="xml" style="opacity: .5">&lt;catalog&gt;</code><code class="xml">  &lt;book id=&quot;book1&quot;&gt;
+    &lt;author age=&quot;48&quot; /&gt;
+  &lt;/book&gt;</code>
+<code class="xml" style="opacity: .5">  &lt;book id=&quot;book1&quot;&gt;
+    &lt;author age=&quot;55&quot; /&gt;
+  &lt;/book&gt;
+&lt;/catalog&gt;</code></code>
+      </pre>
+    </div>
+  </div>
 </section>
 
 <section class="slide image">
-  <img class="full" src="pictures/schemes/xxx.jpg">
+  <img class="full" src="images/schemes/xxx.jpg">
 </section>
 
 <!--
@@ -660,7 +544,7 @@
 </section>
 
 <section class="slide image">
-  <img class="full" src="pictures/schemes/nginx.jpg">
+  <img class="full" src="images/schemes/nginx.jpg">
 </section>
 
 
@@ -698,13 +582,88 @@
   <h4 class="tech-date">2006</h4>
 </section>
 
-<!--
-<section class="slide">
-	<h2 class="shout">
-		&lt;!&ndash; код до и после &ndash;&gt;
-	</h2>
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">jQuery</div>
+    <div class="code">
+      <div class="code-compliance">
+        <div class="browser-icon chrome"></div>
+      </div>
+      <pre>
+<code class="js" style="width: 840px">var element = document
+  .getElementById('elementId')
+
+if (element) {
+  element.addEventListener('click', handler)
+}</code>
+      </pre>
+    </div>
+  </div>
 </section>
--->
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">jQuery</div>
+    <div class="code">
+      <div class="code-compliance">
+        <div class="browser-icon ie"></div>
+      </div>
+      <pre>
+<code class="js" style="width: 840px">var element = document
+  .getElementById('elementId')
+
+if (element) {
+  element.attachEvent('onclick', handler)
+}</code>
+      </pre>
+    </div>
+  </div>
+</section>
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">jQuery</div>
+    <div class="code">
+      <div class="code-compliance">
+        <div class="browser-icon chrome"></div>
+        <div class="browser-icon ie"></div>
+      </div>
+      <pre>
+<code class="js" style="width: 840px">if (element) {
+  if (element.attachEvent) {
+    element.attachEvent('onclick', handler)
+  } else {
+    element.addEventListener('click', handler)
+  }
+}</code>
+      </pre>
+    </div>
+  </div>
+</section>
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">jQuery</div>
+    <div class="code">
+      <pre>
+<code class="js" style="width: 840px">$('#elementId').click(handler)</code>
+      </pre>
+    </div>
+  </div>
+</section>
+
+<section class="slide withDescription">
+  <div class="wrapper">
+    <div class="solution">jQuery</div>
+    <ul class="description">
+      <li>Кросс-браузерность.</li>
+      <li>Мощный механизм поиска DOM-узлов.</li>
+      <li>Простой синтаксис.</li>
+    </ul>
+  </div>
+  <h4 class="tech-date">2004</h4>
+</section>
+
 
 <!--
 <section class="slide">
@@ -822,7 +781,7 @@
   <h4 class="tech-date">2011</h4>
 </section>
 
-<section class="slide noProblems">
+<section class="slide">
   <div class="wrapper">
     <div class="solution">Web Sockets</div>
     <ul class="description">
@@ -835,7 +794,7 @@
 </section>
 
 <section class="slide image">
-  <img class="full" src="pictures/schemes/ws.jpg">
+  <img class="full" src="images/schemes/ws.jpg">
 </section>
 
 <section class="slide">
@@ -952,7 +911,7 @@
 <section class="slide" id="picture">
 	<h2>Pictures</h2>
 	<figure>
-		<img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
+		<img class="cover" src="images/picture.jpg" alt="Orange typewriter on a wooden table close-up">
 		<figcaption class="white">
 			<a href="http://fiftyfootshadows.net/">© John Carey</a>
 		</figcaption>
@@ -985,7 +944,7 @@
 
 <section class="slide" id="see-more">
 	<h2 class="shout">
-		<img src="pictures/logo.svg" alt="Shower logo">
+		<img src="images/logo.svg" alt="Shower logo">
 		<a href="https://github.com/shower/shower">See more on GitHub</a>
 	</h2>
 	<style>
